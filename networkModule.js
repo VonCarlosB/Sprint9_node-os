@@ -1,7 +1,7 @@
 const net = require('os').networkInterfaces()
 const names = Object.keys(net)
 
-function getNetwork() {
+function getNetwork(){
     let ans = ''
     for (const interface of names) {
         let dataArray = net[interface]
@@ -13,5 +13,20 @@ function getNetwork() {
     }
     return ans
 }
+
+//Class solution
+/*function network(){
+    const redes = {}
+    names.forEach(nombre => {
+        redes[nombre] = interface[nombre].map(iface => {
+            return {
+                Familia: iface.family,
+                Direccion: iface.address,
+                Interno: iface.internal
+            }
+        })
+    });
+    return redes
+}*/
 
 module.exports = getNetwork
