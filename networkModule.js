@@ -14,11 +14,11 @@ function getNetwork(){
     return ans
 }
 
-//Class solution
+//Class solution 1
 /*function network(){
     const redes = {}
     names.forEach(nombre => {
-        redes[nombre] = interface[nombre].map(iface => {
+        redes[nombre] = net[nombre].map(iface => {
             return {
                 Familia: iface.family,
                 Direccion: iface.address,
@@ -27,6 +27,20 @@ function getNetwork(){
         })
     });
     return redes
+}*/
+
+//Class solution 2 with for in
+/*function network() {
+    const redes = {}
+    for (interface in net) {
+        redes[interface] = net[interface].map(iface => {
+            return {
+                Familia: iface.family,
+                Direccion: iface.address,
+                Interno: iface.internal
+            }
+        })
+    }
 }*/
 
 module.exports = getNetwork
